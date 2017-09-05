@@ -1,0 +1,27 @@
+<!-- js 文件创建、读取生成目录 -->
+<script type="text/javascript">
+    function ReadFiles()
+    {
+        var fso, f1, ts, s;
+        var ForReading=1;
+        fso=new ActiveXObject("Scripting.FileSystemObject");
+        f1=fso.CreateTextFile("c:\\testfile.txt1",true);
+        f1.WriteLine("Hello World!");
+        f1.WriteBlankLines(1);
+        f1.Close();
+        ts=fso.OpenTextFile("c:\\testfile.txt1",ForReading);
+        s=ts.ReadLine();
+        document.write("File contents=''"+s+"''");
+        ts.Close();
+        f2=fso.CreateTextFile("c:\\testfile.txt2",true);
+        f2.WriteLine("File contents=''"+s+"''");
+        f2.WriteBlankLines(1);
+        f2.Close();
+    }
+    ReadFiles();
+
+
+
+
+
+</script>
